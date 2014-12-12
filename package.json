@@ -1,0 +1,32 @@
+{
+  "name": "fs-tail",
+  "version": "0.0.0",
+  "description": "Similar to tail -f using streams2 and fs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:classdojo/fs-tail.git"
+  },
+  "keywords": [
+    "tail",
+    "streams2",
+    "fs-tail"
+  ],
+  "author": "Christopher Olivares",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/classdojo/fs-tail/issues"
+  },
+  "homepage": "https://github.com/classdojo/fs-tail",
+  "dependencies": {
+    "once": "1.3.1"
+  },
+  "devDependencies": {
+    "expect.js": "0.3.1",
+    "mocha": "^2.0.1",
+    "sinon": "1.12.2"
+  }
+}
