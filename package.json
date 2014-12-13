@@ -1,7 +1,7 @@
 {
   "name": "fs-tail",
-  "version": "0.0.0",
-  "description": "Similar to tail -f using streams2 and fs",
+  "version": "0.0.1",
+  "description": "tail -f like functionality using streams2 and fs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
