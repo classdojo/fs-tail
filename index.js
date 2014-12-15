@@ -35,7 +35,6 @@ FsTail.prototype._statMain_ = function() {
       return me.emit("error", err);
     }
     if(stat.size > me.__start) {
-      me.__lastReadTime = new Date();
       me._teardownChangeListeners();
       me._readFileChunk(stat);
     } else {

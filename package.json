@@ -1,6 +1,6 @@
 {
   "name": "fs-tail",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "tail -f like functionality using streams2 and fs",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "fs-tail"
   ],
   "author": "Christopher Olivares",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/classdojo/fs-tail/issues"
   },
@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "expect.js": "0.3.1",
-    "mocha": "^2.0.1",
+    "mocha": "2.0.1",
     "sinon": "1.12.2"
   }
 }
