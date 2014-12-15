@@ -42,6 +42,12 @@ FsTail.prototype._statMain_ = function() {
         me._emitEOF();
       }
       me._allowStatOnce();
+      if(!me._isListeningForChanges()) {
+        /* 
+         * catches case where initial file is empty.
+        */
+        me._setupChangeListeners();
+      }
     }
   });
 };
@@ -74,6 +80,10 @@ FsTail.prototype._serviceChangeEvent = function() {
   this._stat();
 };
 
+
+FsTail.prototype._isListeningForChanges = function() {
+  return !!this.__i;
+};
 /*
  * Setup both fs.watch and setInterval to queue up
  * change stat event.

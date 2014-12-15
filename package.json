@@ -1,6 +1,6 @@
 {
   "name": "fs-tail",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "tail -f like functionality using streams2 and fs",
   "main": "index.js",
   "scripts": {

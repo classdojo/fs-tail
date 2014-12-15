@@ -16,9 +16,6 @@ describe("fs-tail", function() {
       });
     });
 
-    // after(function(done) {
-    // });
-
     describe("initial static file", function() {
       var fileData = new Buffer("full\nfile\ncontents\n");
       var data, collector, fullData, tail;
@@ -81,6 +78,40 @@ describe("fs-tail", function() {
               expect(!!err).to.be(false);
             });
           });
+        });
+      });
+    });
+    
+    describe("initial empty file", function() {
+      var data, collector, fullData, tail;
+      var fileData = new Buffer("some\nappended\ncontent\n");
+      before(function(done) {
+        data = [];
+        collector = new Writable();
+        collector._write = function(obj, enc, cb) {
+          data.push(obj);
+          cb();
+        };
+        fs.open(testFile, "w+", done);
+      });
+
+      describe("with changes appended at some later time", function() {
+        it("captures those changes", function(done) {
+          tail = FsTail(testFile, {EOFAfter: 10});
+          tail.pipe(collector);
+          tail.once("EOF", function() {
+            setTimeout(function() {
+              tail.once("EOF", function() {
+                fullData = Buffer.concat(data);
+                expect(fullData.toString()).to.be(fileData.toString());
+                done();
+              });
+              fs.appendFile(testFile, fileData, function(err) {
+                expect(!!err).to.be(false);
+              });
+            }, 500);
+          });
+
         });
       });
     });
