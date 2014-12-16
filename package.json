@@ -4,7 +4,7 @@
   "description": "tail -f like functionality using streams2 and fs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make test-codecov.io"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,10 @@
     "once": "1.3.1"
   },
   "devDependencies": {
+    "codecov.io": "0.0.8",
     "expect.js": "0.3.1",
+    "istanbul": "0.3.5",
+    "jshint": "2.5.10",
     "mocha": "2.0.1",
     "sinon": "1.12.2"
   }
