@@ -3,7 +3,7 @@
 [![codecov.io](https://codecov.io/github/classdojo/fs-tail/coverage.svg?branch=master)](https://codecov.io/github/classdojo/fs-tail?branch=master)
 [![NPM version](https://badge.fury.io/js/fs-tail.png)](http://badge.fury.io/js/fs-tail)
 
-```tail -f``` functionality for node.js using pull streams.  Significantly faster than delegating to the operating system with ```child_processes.exec```.   
+```tail -f``` functionality for node.js using pull streams.  Significantly faster than delegating to the operating system with ```child_process.exec```.   
 
 ```javascript
 var FsTail = require("fs-tail");
