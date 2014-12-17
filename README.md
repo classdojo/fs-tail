@@ -7,7 +7,13 @@
 ```javascript
 var FsTail = require("fs-tail");
 
-var tail = FsTail("./someFile.txt");
+// Available options - defaults are shown.
+var options = {
+  start: 0 //Start on byte 0 of file.
+  EOFAfter: 500 //emit EOF after 500ms of no data.
+};
+
+var tail = FsTail("./someFile.txt", options);
 tail.on("EOF", function() {
   console.log("Reached end of file");
 });
